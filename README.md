@@ -1,6 +1,8 @@
 # Bomb Arena
 
-Jogo 2D multiplayer online mínimo para 2–6 pessoas. O servidor é a autoridade sobre movimento, bombas, colisões, eliminações e vitória; o navegador apenas envia controles e desenha o estado no Canvas.
+Jogo 2D multiplayer online para 2–6 pessoas. O servidor é a autoridade sobre movimento, bombas, colisões, buffs, eliminações e vitória; o navegador apenas envia controles e desenha o estado no Canvas.
+
+Durante a rodada aparecem três melhorias: botas aumentam a velocidade, raio amplia a explosão e detonador permite colocar mais bombas simultaneamente. Os personagens têm direção e animação de caminhada, e as bombas e explosões usam animações próprias.
 
 ## Rodar localmente
 

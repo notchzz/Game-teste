@@ -1,21 +1,84 @@
 <!doctype html>
 <html lang="pt-BR">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Bomb Arena</title><link rel="stylesheet" href="/style.css"></head>
-<body>
-  <main>
-    <header><div class="bomb-mark">💣</div><div><h1>Bomb Arena</h1><p>Abra espaço. Plante a bomba. Seja o último.</p></div></header>
-    <section id="home" class="panel entry">
-      <label>Seu nome<input id="name" maxlength="16" placeholder="Ex.: Bia" autocomplete="nickname"></label>
-      <button id="create" class="primary">Criar sala privada</button>
-      <div class="join"><input id="code" maxlength="5" placeholder="CÓDIGO" aria-label="Código da sala"><button id="join">Entrar</button></div>
-      <p id="error" role="alert"></p>
-    </section>
-    <section id="lobby" class="panel hidden"><h2>Sala <strong id="roomCode"></strong></h2><button id="copy">Copiar link de convite</button><ul id="lobbyPlayers"></ul><p id="lobbyHint"></p><button id="start" class="primary">Começar partida</button></section>
-    <section id="game" class="hidden game-layout">
-      <div class="canvas-wrap"><canvas id="canvas" width="720" height="528"></canvas><div id="result" class="result hidden"><h2 id="winner"></h2><button id="restart" class="primary">Jogar de novo</button></div></div>
-      <aside class="panel"><div><span class="room-label">Sala</span><strong id="gameCode"></strong></div><ul id="players"></ul><p>Setas ou WASD para andar<br><b>Espaço</b> para soltar bomba</p><button id="copyGame">Copiar convite</button></aside>
-    </section>
-    <div id="touch" class="touch hidden"><div class="dpad"><button data-key="up">▲</button><button data-key="left">◀</button><button data-key="down">▼</button><button data-key="right">▶</button></div><button id="touchBomb" class="bomb-button">💣</button></div>
-  </main>
-  <script src="/socket.io/socket.io.js"></script><script src="/game.js"></script>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <title>Bomb Arena</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="bomb-mark">💣</div>
+        <div>
+          <h1>Bomb Arena</h1>
+          <p>Abra espaço. Plante a bomba. Seja o último.</p>
+        </div>
+      </header>
+      <section id="home" class="panel entry">
+        <label
+          >Seu nome<input
+            id="name"
+            maxlength="16"
+            placeholder="Ex.: Bia"
+            autocomplete="nickname"
+        /></label>
+        <button id="create" class="primary">Criar sala privada</button>
+        <div class="join">
+          <input
+            id="code"
+            maxlength="5"
+            placeholder="CÓDIGO"
+            aria-label="Código da sala"
+          /><button id="join">Entrar</button>
+        </div>
+        <p id="error" role="alert"></p>
+      </section>
+      <section id="lobby" class="panel hidden">
+        <h2>Sala <strong id="roomCode"></strong></h2>
+        <button id="copy">Copiar link de convite</button>
+        <ul id="lobbyPlayers"></ul>
+        <p id="lobbyHint"></p>
+        <button id="start" class="primary">Começar partida</button>
+      </section>
+      <section id="game" class="hidden game-layout">
+        <div class="canvas-wrap">
+          <canvas id="canvas" width="720" height="528"></canvas>
+          <div id="result" class="result hidden">
+            <h2 id="winner"></h2>
+            <button id="restart" class="primary">Jogar de novo</button>
+          </div>
+        </div>
+        <aside class="panel game-panel">
+          <div>
+            <span class="room-label">Sala</span><strong id="gameCode"></strong>
+          </div>
+          <ul id="players"></ul>
+          <div id="myStats" class="stats"></div>
+          <div class="buff-guide">
+            <p><i class="buff-symbol speed">B</i> Botas: velocidade</p>
+            <p><i class="buff-symbol range">R</i> Raio: explosão maior</p>
+            <p><i class="buff-symbol bomb">+</i> Detonador: mais bombas</p>
+          </div>
+          <p class="controls">
+            Setas ou WASD para andar<br /><b>Espaço</b> para soltar bomba
+          </p>
+          <button id="copyGame">Copiar convite</button>
+        </aside>
+      </section>
+      <div id="touch" class="touch hidden">
+        <div class="dpad">
+          <button data-key="up">▲</button><button data-key="left">◀</button
+          ><button data-key="down">▼</button
+          ><button data-key="right">▶</button>
+        </div>
+        <button id="touchBomb" class="bomb-button">💣</button>
+      </div>
+    </main>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/game.js"></script>
+  </body>
+</html>
